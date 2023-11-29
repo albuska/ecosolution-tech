@@ -39,6 +39,7 @@ export const MenuBurger = ({handleOpenMenu }) => {
                     stroke={'#FFFFFF'}
                     width={16}
                     height={16}
+                    style={{cursor: "pointer"}}
                   />
                 </ItemPoints>
               ))}

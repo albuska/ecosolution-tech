@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { selectDesktop, selectTablet } from '../../../utils/selectMediaRequests';
 
 export const Backdrop = styled.div`
   width: 100%;
@@ -15,6 +16,10 @@ export const Backdrop = styled.div`
 
   background: rgba(23, 61, 51, 0.25);
   backdrop-filter: blur(2px);
+
+  @media ${selectTablet} {
+    justify-content: end;
+  }
 `;
 
 export const MenuBurgerContainer = styled.div`
@@ -28,12 +33,23 @@ export const MenuBurgerContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media ${selectTablet} {
+  right: 30px;
+  top: 42px;
+  }
+
+  @media ${selectDesktop} {
+  right: 100px;
+  top: 30px;
+  }
 `;
 
 export const IconCloseContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
+  cursor: pointer;
 `;
 
 export const IconText = styled.p`

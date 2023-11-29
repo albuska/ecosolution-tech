@@ -6,11 +6,11 @@ import {
   QuestionText,
   AnswerText,
   Text,
-  ButtonQuestion
 } from './QuestionsSection.styled';
 import { QUESTIONS } from '../../../constants/globalConstants';
 import { Icon } from '../../../shared/components/Icon/Icon';
 import { useState } from 'react';
+import { ButtonFillBgc } from '../../../shared/components/ButtonFillBgc/ButtonFillBgc';
 
 export const QuestionsSection = () => {
   const [openQuestionId, setOpenQuestionId] = useState(null);
@@ -55,15 +55,7 @@ export const QuestionsSection = () => {
         ))}
       </QuestionsList>
       <Text>Didn&#39;t find the answer to your question? </Text>
-      <ButtonQuestion>
-        Contact Us
-        <Icon
-          iconName={'icon-ellipse'}
-          width={14}
-          height={14}
-          fill={'#173D33'}
-        />
-      </ButtonQuestion>
+     <ButtonFillBgc text="Contact Us" marginTop={12}/>
     </section>
   );
 };

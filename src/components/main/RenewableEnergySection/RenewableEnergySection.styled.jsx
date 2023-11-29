@@ -1,9 +1,20 @@
-import { styled } from 'styled-components';
-import { selectTablet, selectDesktop } from '../../../utils/selectMediaRequests';
+import { styled } from "styled-components";
+import {
+  selectTablet,
+  selectDesktop,
+} from "../../../utils/selectMediaRequests";
 
 export const RenewableEnergySectionContainer = styled.section`
   padding-top: 146px;
   padding-bottom: 40px;
+
+  @media ${selectTablet} {
+    padding-top: 164px;
+  }
+
+  @media ${selectDesktop} {
+    padding-top: 200px;
+  }
 `;
 
 export const RenewableEnergyMainTitle = styled.h1`
@@ -12,6 +23,15 @@ export const RenewableEnergyMainTitle = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes.big};
   line-height: 1;
   text-transform: uppercase;
+
+  @media ${selectTablet} {
+    /* width: 290px; */
+    font-size: ${({ theme }) => theme.fontSizes.huge};
+  }
+
+  @media ${selectDesktop} {
+    font-size: ${({ theme }) => theme.fontSizes.gigantic};
+  }
 `;
 
 export const MainImg = styled.div`

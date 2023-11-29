@@ -15,26 +15,33 @@ import mainImgMobile1x from "../../../assets/images/mainImage/image-mob.jpg";
 import mainImgMobile2x from "../../../assets/images/mainImage/image-mob@2x.jpg";
 import { MainText } from "../../../shared/components/MainText/MainText";
 import { EmailLink } from "../../../shared/components/EmailLink/EmailLink";
+import useIsTablet from "../../../hooks/useIsTablet/useIsTablet";
 
 export const RenewableEnergySection = () => {
+  const isTablet = useIsTablet();
+
   return (
     <RenewableEnergySectionContainer>
-      <RenewableEnergyMainTitle>
-        RENEWABLE ENERGY For any task
-      </RenewableEnergyMainTitle>
-      <MainText
-        text="Development and implementation of renewable non-polluting energy
-        sources, generating power generation using energy wind, sun, water,
-        biomass"
-      />
-      <Button
-        text="Learn more"
-        marginTop={24}
-        marginBottom={24}
-        marginLeft="auto"
-        marginRight="auto"
-        type="button"
-      />
+<div style={{display: isTablet && 'flex', justifyContent: isTablet && "space-between"}}>
+        <RenewableEnergyMainTitle>
+          RENEWABLE ENERGY For any task
+        </RenewableEnergyMainTitle>
+       <div>
+          <MainText
+            text="Development and implementation of renewable non-polluting energy
+            sources, generating power generation using energy wind, sun, water,
+            biomass"
+          />
+          <Button
+            text="Learn more"
+            marginTop={24}
+            marginBottom={24}
+            marginLeft="auto"
+            marginRight="auto"
+            type="button"
+          />
+       </div>
+</div>
       <Line />
       <InfoText
         text="79005, Ukraine, Lvivstreet. Shota Rustaveli, 7"

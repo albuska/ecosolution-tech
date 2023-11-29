@@ -19,7 +19,7 @@ const fontSizes = {
   xxxl: "32px",
   big: "36px",
   huge: "48px",
-  gigantic: "68px",
+  gigantic: "64px",
   mega: "102px",
 };
 
