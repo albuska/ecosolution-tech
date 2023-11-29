@@ -1,10 +1,15 @@
-import PropTypes from 'prop-types';
-import { MainTextStyled } from './MainText.styled';
+import PropTypes from "prop-types";
+import { MainTextStyled } from "./MainText.styled";
 
-export const MainText = ({ text }) => {
-  return <MainTextStyled>{text}</MainTextStyled>;
+export const MainText = ({ text, marginTop }) => {
+  return (
+    <MainTextStyled style={{ marginTop: marginTop || 24 }}>
+      {text}
+    </MainTextStyled>
+  );
 };
 
 MainText.propTypes = {
-  text: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
+  marginTop: PropTypes.number,
 };
