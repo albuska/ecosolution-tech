@@ -54,7 +54,7 @@ export const QuestionsSection = () => {
           </li>
         ))}
       </QuestionsList>
-      <Text>Didn't find the answer to your question? </Text>
+      <Text>Didn&#39;t find the answer to your question? </Text>
       <ButtonQuestion>
         Contact Us
         <Icon
