@@ -1,4 +1,4 @@
-import { Form } from '../../../shared/components/Form/Form';
+import { FormComp } from '../../../shared/components/Form/FormComp';
 import { Icon } from '../../../shared/components/Icon/Icon';
 import { Networks } from '../../../shared/components/Networks/Networks';
 import { SecondTitle } from '../../../shared/components/SecondTitle/SecondTitle';
@@ -66,8 +66,8 @@ export const ContactSection = () => {
               gap={32}
             />
         </div>
-        <Form/>
       </address>
+      <FormComp/>
     </section>
   );
 };

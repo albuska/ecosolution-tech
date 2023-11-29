@@ -8,8 +8,6 @@ export const BtnStyled = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
 `;
 
 export const ButtonText = styled.p`

@@ -15,7 +15,6 @@ export const DateText = styled.p`
 `;
 
 export const DateTextSpan = styled.span`
-  color: ${({ theme }) => theme.colors.mainTextColor};
   text-align: justify;
 `;
 
@@ -29,7 +28,6 @@ export const IconBox = styled.div`
   height: 66px;
   border-radius: 50%;
   background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.colors.mainTextColor};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,7 +46,6 @@ export const IconBoxSlider = styled.button`
 export const SliderList = styled.ul`
   margin-top: 19px;
   display: flex;
-  /* overflow-x: auto; */
 `;
 
 export const SliderContainer = styled.li`
@@ -63,7 +60,6 @@ export const ImgSlider = styled.img`
 `;
 
 export const SliderTitle = styled.h4`
-  color: ${({ theme }) => theme.colors.mainTextColor};
   text-align: justify;
   font-size: ${({ theme }) => theme.fontSizes.ml};
   letter-spacing: -0.72px;
@@ -72,7 +68,7 @@ export const SliderTitle = styled.h4`
 
 export const InfoBoxesOverlay = styled.div`
   padding: 12px;
-  background-color: #eaedf1;
+  background-color: ${({ theme }) => theme.colors.secondBackgroundColor};
 `;
 
 export const InfoBox = styled.div`
@@ -91,7 +87,6 @@ export const InfoBoxDown = styled(InfoBox)`
 `;
 
 export const SliderText = styled.p`
-  color: ${({ theme }) => theme.colors.mainTextColor};
   text-align: justify;
   font-size: ${({ theme }) => theme.fontSizes.xs};
   letter-spacing: -0.48px;

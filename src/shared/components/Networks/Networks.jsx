@@ -1,24 +1,31 @@
-import PropTypes from 'prop-types';
-import { Icon } from '../Icon/Icon';
-import { NetworksList } from './Networks.styled';
+import PropTypes from "prop-types";
+import { Icon } from "../Icon/Icon";
+import { NetworksList } from "./Networks.styled";
 
-export const Networks = ({ fillFace, fillIns, strokeFace, strokeIns, gap }) => {
+export const Networks = ({
+  fillFace,
+  fillIns,
+  strokeFace,
+  strokeIns,
+  gap,
+  justifyContent,
+}) => {
   return (
-    <NetworksList style={{ gap }}>
+    <NetworksList style={{ gap, justifyContent }}>
       <li>
         <Icon
-          iconName={'icon-facebook'}
-          fill={fillFace ? fillFace : '#FFFFFF'}
-          stroke={strokeFace ? strokeFace : '#FFFFFF'}
+          iconName={"icon-facebook"}
+          fill={fillFace ? fillFace : "#FFFFFF"}
+          stroke={strokeFace ? strokeFace : "#FFFFFF"}
           width={24}
           height={24}
         />
       </li>
       <li>
         <Icon
-          iconName={'icon-instagram'}
-          fill={fillIns ? fillIns : 'transparent'}
-          stroke={strokeIns ? strokeIns : '#FFFFFF'}
+          iconName={"icon-instagram"}
+          fill={fillIns ? fillIns : "transparent"}
+          stroke={strokeIns ? strokeIns : "#FFFFFF"}
           width={24}
           height={24}
         />
@@ -33,4 +40,5 @@ Networks.propTypes = {
   strokeFace: PropTypes.string,
   strokeIns: PropTypes.string,
   gap: PropTypes.number,
+  justifyContent: PropTypes.string,
 };

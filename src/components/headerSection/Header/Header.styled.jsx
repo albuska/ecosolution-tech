@@ -11,12 +11,6 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
 `;
 
-export const LogoContainer = styled.div`
-  display: flex;
-  gap: 4px;
-  align-items: end;
-`;
-
 export const MenuContainer = styled.div`
 width: 40px;
 height: 39px;

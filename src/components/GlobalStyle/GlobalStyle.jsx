@@ -7,7 +7,7 @@ body {
   font-family: ${({ theme }) => theme.fonts.regularFira}, sans-serif;
   font-size: ${({ theme }) => theme.fontSizes.sm};
   color: ${({ theme }) => theme.colors.mainTextColor};
-  color: #173D33;
+  background-color: ${({ theme }) => theme.colors.mainBackgroundColor};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;

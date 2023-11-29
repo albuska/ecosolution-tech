@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import LogoEcoImage from '../../../assets/images/ecosolution.png';
-import LogoGreenImage from '../../../assets/images/GREENERGY-FOR-LIFE.png';
 import { Icon } from '../../../shared/components/Icon/Icon';
 import { MenuBurger } from '../MenuBurger/MenuBurger';
-import { HeaderContainer, LogoContainer, MenuContainer } from './Header.styled';
+import { HeaderContainer, MenuContainer } from './Header.styled';
+import { Logo } from '../../../shared/components/Logo/Logo';
 
 export const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -15,11 +14,7 @@ export const Header = () => {
   return (
     <HeaderContainer>
       {openMenu && <MenuBurger handleOpenMenu={handleOpenMenu} />}
-      <LogoContainer>
-        <Icon iconName={'icon-logo'} width={31} height={18} />
-        <img src={LogoEcoImage} alt="LogoEcoImage" width={170} />
-        <img src={LogoGreenImage} alt="LogoGreenImage" width={60} />
-      </LogoContainer>
+     <Logo/>
       <MenuContainer onClick={handleOpenMenu}>
         <Icon
           iconName={'icon-menu'}

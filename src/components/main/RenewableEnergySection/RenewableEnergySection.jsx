@@ -1,20 +1,20 @@
-import { Button } from '../../../shared/components/Button/Button';
-import { InfoText } from '../../../shared/components/InfoText/InfoText';
-import { Line } from '../../../shared/components/Line/Line';
+import { Button } from "../../../shared/components/Button/Button";
+import { InfoText } from "../../../shared/components/InfoText/InfoText";
+import { Line } from "../../../shared/components/Line/Line";
 import {
   RenewableEnergySectionContainer,
   RenewableEnergyMainTitle,
   MainImg,
   Img,
-} from './RenewableEnergySection.styled';
-import mainImgDesktop1x from '../../../assets/images/mainImage/image-desk.jpg';
-import mainImgDesktop2x from '../../../assets/images/mainImage/image-desk@2x.jpg';
-import mainImgTablet1x from '../../../assets/images/mainImage/image-tabl.jpg';
-import mainImgTablet2x from '../../../assets/images/mainImage/image-tabl@2x.jpg';
-import mainImgMobile1x from '../../../assets/images/mainImage/image-mob.jpg';
-import mainImgMobile2x from '../../../assets/images/mainImage/image-mob@2x.jpg';
-import { MainText } from '../../../shared/components/MainText/MainText';
-import { EmailLink } from '../../../shared/components/EmailLink/EmailLink';
+} from "./RenewableEnergySection.styled";
+import mainImgDesktop1x from "../../../assets/images/mainImage/image-desk.jpg";
+import mainImgDesktop2x from "../../../assets/images/mainImage/image-desk@2x.jpg";
+import mainImgTablet1x from "../../../assets/images/mainImage/image-tabl.jpg";
+import mainImgTablet2x from "../../../assets/images/mainImage/image-tabl@2x.jpg";
+import mainImgMobile1x from "../../../assets/images/mainImage/image-mob.jpg";
+import mainImgMobile2x from "../../../assets/images/mainImage/image-mob@2x.jpg";
+import { MainText } from "../../../shared/components/MainText/MainText";
+import { EmailLink } from "../../../shared/components/EmailLink/EmailLink";
 
 export const RenewableEnergySection = () => {
   return (
@@ -27,13 +27,20 @@ export const RenewableEnergySection = () => {
         sources, generating power generation using energy wind, sun, water,
         biomass"
       />
-      <Button text="Learn more" marginTop={24} marginBottom={24} />
+      <Button
+        text="Learn more"
+        marginTop={24}
+        marginBottom={24}
+        marginLeft="auto"
+        marginRight="auto"
+        type="button"
+      />
       <Line />
       <InfoText
         text="79005, Ukraine, Lvivstreet. Shota Rustaveli, 7"
         marginTop={24}
       />
-      <EmailLink href="office@ecosolution.com"/>
+      <EmailLink href="office@ecosolution.com" />
       <MainImg>
         <picture>
           <source
