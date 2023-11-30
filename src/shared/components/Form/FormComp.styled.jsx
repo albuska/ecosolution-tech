@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { Field, Form, ErrorMessage } from "formik";
+import { theme } from "../../../theme/theme";
 
 export const FormStyle = styled(Form)`
   margin-top: 36px;
@@ -22,7 +23,8 @@ export const Input = styled(Field)`
   font-size: ${({ theme }) => theme.fontSizes.ml};
   letter-spacing: -0.72px;
   border-color: transparent;
-  border-bottom-color: ${({ theme }) => theme.colors.accentColor};
+  border-bottom-color: ${({ $hasError }) =>
+    $hasError ? theme.colors.errorColor : theme.colors.accentColor};
   background-color: transparent;
 
   &:focus {
@@ -38,9 +40,4 @@ export const ErrorMessageStyle = styled(ErrorMessage)`
   margin-left: auto;
   color: ${({ theme }) => theme.colors.errorColor};
   margin-top: 8px;
-
-  &.input {
-    border-bottom-color: red;  
-  }
 `;
-

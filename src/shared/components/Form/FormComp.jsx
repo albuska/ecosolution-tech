@@ -18,15 +18,6 @@ const schema = Yup.object().shape({
   message: Yup.string(),
 });
 
-const getStyles = (error) => {
-  if (error) {
-    return {
-      borderBottomColor: '#D28B8B',
-    };
-  }
-  return {};
-};
-
 export const FormComp = () => {
   return (
       <Formik
@@ -50,7 +41,7 @@ export const FormComp = () => {
                 name="fullName"
                 placeholder="John Rosie"
                 required
-                style={getStyles(formProps.errors.fullName)}
+                $hasError={(Object.keys(formProps.errors)[0] && formProps.touched.fullName)}
               />
               <ErrorMessageStyle name="fullName" component="div" />
 
@@ -61,7 +52,7 @@ export const FormComp = () => {
                 placeholder="johnrosie@gmail.com"
                 type="email"
                 required
-                style={getStyles(formProps.errors.email)}
+                $hasError={(Object.keys(formProps.errors)[1] && formProps.touched.email)}
               />
               <ErrorMessageStyle name="email" component="div" />
 
@@ -72,7 +63,7 @@ export const FormComp = () => {
                 placeholder="380961234567"
                 type="phone"
                 required
-                style={getStyles(formProps.errors.phone)}
+                $hasError={(Object.keys(formProps.errors)[2] && formProps.touched.phone)}
               />
               <ErrorMessageStyle name="phone" component="div" />
 
