@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import { Icon } from "../Icon/Icon";
 import { BtnStyled, ButtonText, IconBox } from "./Button.styled";
 
-export const Button = ({ text, marginTop, marginBottom, type, width, marginLeft, marginRight }) => {
+export const Button = ({ text, type, width,  }) => {
   return (
-    <BtnStyled style={{ marginTop, marginBottom, width, marginLeft, marginRight }} type={type}>
+    <BtnStyled style={{ width }} type={type}>
       <ButtonText>{text}</ButtonText>
       <IconBox>
         <Icon
@@ -21,10 +21,6 @@ export const Button = ({ text, marginTop, marginBottom, type, width, marginLeft,
 
 Button.propTypes = {
   text: PropTypes.string.isRequired,
-  marginTop: PropTypes.number,
-  marginLeft: PropTypes.any,
-  marginBottom: PropTypes.number,
-  marginRight: PropTypes.any, 
   type: PropTypes.string.isRequired,
   width: PropTypes.number
 };

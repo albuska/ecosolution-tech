@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import { Field, Form, ErrorMessage } from "formik";
 import { theme } from "../../../theme/theme";
+import { selectTablet } from "../../../utils/selectMediaRequests";
 
 export const FormStyle = styled(Form)`
   margin-top: 36px;
@@ -8,6 +9,10 @@ export const FormStyle = styled(Form)`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.secondBackgroundColor};
+
+  @media ${selectTablet} {
+    width: 50%;
+  }
 `;
 
 export const Label = styled.label`
@@ -28,7 +33,7 @@ export const Input = styled(Field)`
   background-color: transparent;
 
   &:focus {
-    outline: 2px solid #173d33;
+    outline: 2px solid ${({ theme }) => theme.colors.mainTextColor};
   }
 
   &::placeholder {
@@ -40,4 +45,16 @@ export const ErrorMessageStyle = styled(ErrorMessage)`
   margin-left: auto;
   color: ${({ theme }) => theme.colors.errorColor};
   margin-top: 8px;
+`;
+
+export const BtnFormOverlay = styled.div`
+  @media screen and (max-width: 767px) {
+    margin-top: 16px;
+    margin-left: auto;
+  }
+
+  @media ${selectTablet} {
+    margin-left: auto;
+    margin-top: 16px;
+  }
 `;

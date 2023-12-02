@@ -20,7 +20,8 @@ const fontSizes = {
   big: "36px",
   huge: "48px",
   gigantic: "64px",
-  mega: "102px",
+  mega: "100px",
+  megaMax: "164px",
 };
 
 const media = {

@@ -1,5 +1,6 @@
 import 'modern-normalize';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, styled } from 'styled-components';
+import { selectDesktop, selectTablet } from '../../utils/selectMediaRequests';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -52,4 +53,16 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
+`;
+
+export const SectionStyled = styled.section`
+  padding-top: 36px;
+
+  @media ${selectTablet} {
+    padding-top: 100px;
+  }
+
+  @media ${selectDesktop} {
+    padding-top: 120px;
+  }
 `;

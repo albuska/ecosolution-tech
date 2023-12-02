@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import { Icon } from "../Icon/Icon";
 import { ButtonFill } from "./ButtonFillBgc.styled";
 
-export const ButtonFillBgc = ({ text, marginTop}) => {
+export const ButtonFillBgc = ({ text }) => {
   return (
-    <ButtonFill style={{marginTop}}>
+    <ButtonFill>
       {text}
       <Icon iconName={"icon-ellipse"} width={14} height={14} fill={"#173D33"} />
     </ButtonFill>
@@ -13,5 +13,4 @@ export const ButtonFillBgc = ({ text, marginTop}) => {
 
 ButtonFillBgc.propTypes = {
   text: PropTypes.string.isRequired,
-  marginTop: PropTypes.number
 };

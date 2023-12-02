@@ -1,4 +1,17 @@
-import { styled } from 'styled-components';
+import { styled } from "styled-components";
+import { selectDesktop, selectTablet } from "../../../utils/selectMediaRequests";
+
+export const ContactOverlay = styled.div`
+  @media ${selectTablet} {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 100px;
+  }
+
+  @media ${selectDesktop} {
+    padding-bottom: 120px;
+  }
+`;
 
 export const Text = styled.p`
   color: ${({ theme }) => theme.colors.mainTextColor};

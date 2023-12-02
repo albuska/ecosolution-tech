@@ -1,10 +1,29 @@
-import { styled } from 'styled-components';
+import { styled } from "styled-components";
+import {
+  selectDesktop,
+  selectTablet,
+} from "../../../utils/selectMediaRequests";
 
 export const SuccessfulCasesSecondBox = styled.div`
-  padding-top: 24px;
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
+
+  @media screen and (max-width: 767px) {
+    justify-content: space-between;
+    padding-top: 24px;
+  }
+
+  @media ${selectTablet} {
+    gap: 111px;
+  }
+`;
+
+export const SuccessfulHeaderOverlay = styled.div`
+  @media ${selectTablet} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 
 export const DateText = styled.p`
@@ -16,6 +35,7 @@ export const DateText = styled.p`
 
 export const DateTextSpan = styled.span`
   text-align: justify;
+  color: ${({ theme }) => theme.colors.mainTextColor};
 `;
 
 export const IconsBox = styled.div`
@@ -28,6 +48,7 @@ export const IconBox = styled.div`
   height: 66px;
   border-radius: 50%;
   background-color: transparent;
+  border: 1px solid ${({ theme }) => theme.colors.mainTextColor};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,17 +67,33 @@ export const IconBoxSlider = styled.button`
 export const SliderList = styled.ul`
   margin-top: 19px;
   display: flex;
+
+  @media ${selectTablet} {
+    gap: 24px;
+  }
+
+  @media ${selectDesktop} {
+    gap: 48px;
+  }
 `;
 
 export const SliderContainer = styled.li`
-  display: ${props => (props.$active ? 'block' : 'none')};
+  display: ${(props) => (props.$active ? "block" : "none")};
   transition: opacity 0.5s ease;
+
+  @media ${selectTablet} {
+    display: ${(props) =>
+      props.$active || props.$previous ? "block" : "none"};
+  }
 `;
 
 export const ImgSlider = styled.img`
   width: 100%;
-  height: 180px;
   margin: auto;
+
+  @media ${selectTablet} {
+    width: 342px;
+  }
 `;
 
 export const SliderTitle = styled.h4`
@@ -90,4 +127,32 @@ export const SliderText = styled.p`
   text-align: justify;
   font-size: ${({ theme }) => theme.fontSizes.xs};
   letter-spacing: -0.48px;
+`;
+
+export const SuccessfulTitleOverlay = styled.div`
+  width: 260px;
+
+  @media ${selectTablet} {
+    width: 378px;
+    display: flex;
+    align-items: center;
+    gap: 90px;
+  }
+
+  @media ${selectDesktop} {
+    width: 619px;
+  }
+`;
+
+export const SuccessfulTitleBox = styled.div`
+  width: 260px;
+
+  @media ${selectTablet} {
+    display: flex;
+    align-items: center;
+  }
+
+  @media ${selectDesktop} {
+    width: 398px;
+  }
 `;

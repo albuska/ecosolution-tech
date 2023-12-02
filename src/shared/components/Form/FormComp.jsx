@@ -5,6 +5,7 @@ import {
   Label,
   Input,
   ErrorMessageStyle,
+  BtnFormOverlay,
 } from "./FormComp.styled";
 import { Button } from "../Button/Button";
 
@@ -20,74 +21,76 @@ const schema = Yup.object().shape({
 
 export const FormComp = () => {
   return (
-      <Formik
-        initialValues={{
-          fullName: "",
-          email: "",
-          phone: "",
-          message: "",
-        }}
-        validationSchema={schema}
-        onSubmit={async (values) => {
-          await new Promise((r) => setTimeout(r, 500));
-          alert(JSON.stringify(values, null, 2));
-        }}
-      >
-        {(formProps) => (
-          <FormStyle>
-              <Label htmlFor="fullName">* Full name:</Label>
-              <Input
-                id="fullName"
-                name="fullName"
-                placeholder="John Rosie"
-                required
-                $hasError={(Object.keys(formProps.errors)[0] && formProps.touched.fullName)}
-              />
-              <ErrorMessageStyle name="fullName" component="div" />
+    <Formik
+      initialValues={{
+        fullName: "",
+        email: "",
+        phone: "",
+        message: "",
+      }}
+      validationSchema={schema}
+      onSubmit={async (values) => {
+        await new Promise((r) => setTimeout(r, 500));
+        alert(JSON.stringify(values, null, 2));
+      }}
+    >
+      {(formProps) => (
+        <FormStyle>
+          <Label htmlFor="fullName">* Full name:</Label>
+          <Input
+            id="fullName"
+            name="fullName"
+            placeholder="John Rosie"
+            required
+            $hasError={
+              Object.keys(formProps.errors)[0] && formProps.touched.fullName
+            }
+          />
+          <ErrorMessageStyle name="fullName" component="div" />
 
-              <Label htmlFor="email">* E-mail:</Label>
-              <Input
-                id="email"
-                name="email"
-                placeholder="johnrosie@gmail.com"
-                type="email"
-                required
-                $hasError={(Object.keys(formProps.errors)[1] && formProps.touched.email)}
-              />
-              <ErrorMessageStyle name="email" component="div" />
+          <Label htmlFor="email">* E-mail:</Label>
+          <Input
+            id="email"
+            name="email"
+            placeholder="johnrosie@gmail.com"
+            type="email"
+            required
+            $hasError={
+              Object.keys(formProps.errors)[1] && formProps.touched.email
+            }
+          />
+          <ErrorMessageStyle name="email" component="div" />
 
-              <Label htmlFor="phone">* Phone:</Label>
-              <Input
-                id="phone"
-                name="phone"
-                placeholder="380961234567"
-                type="phone"
-                required
-                $hasError={(Object.keys(formProps.errors)[2] && formProps.touched.phone)}
-              />
-              <ErrorMessageStyle name="phone" component="div" />
+          <Label htmlFor="phone">* Phone:</Label>
+          <Input
+            id="phone"
+            name="phone"
+            placeholder="380961234567"
+            type="phone"
+            required
+            $hasError={
+              Object.keys(formProps.errors)[2] && formProps.touched.phone
+            }
+          />
+          <ErrorMessageStyle name="phone" component="div" />
 
-            <Label htmlFor="message">Message:</Label>
-            <Input
-              as="textarea"
-              name="message"
-              id="message"
-              cols="30"
-              rows="10"
-              placeholder="Your message"
-            />
-            <ErrorMessageStyle name="message" component="div" />
-            <Button
-              text="Send"
-              marginTop={16}
-              marginLeft="auto"
-              type="submit"
-              width={99}
-            />
-          </FormStyle>
-        )}
-      </Formik>
+          <Label htmlFor="message">Message:</Label>
+          <Input
+            as="textarea"
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Your message"
+            autoComplete="off"
+            style={{ resize: "none" }}
+          />
+          <ErrorMessageStyle name="message" component="div" />
+          <BtnFormOverlay>
+            <Button text="Send" type="submit" width={99} />
+          </BtnFormOverlay>
+        </FormStyle>
+      )}
+    </Formik>
   );
 };
-
-

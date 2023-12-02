@@ -1,43 +1,68 @@
-import SliderImageOne from '../assets/images/sliderImgs/slider1.jpg';
-import SliderImageTwo from '../assets/images/sliderImgs/slider2.jpg';
-import SliderImageThree from '../assets/images/sliderImgs/slider3.jpg';
-import SliderImageFour from '../assets/images/sliderImgs/slider4.jpg';
-import SliderImageFive from '../assets/images/sliderImgs/slider5.jpg';
+import SliderImageOne from "../assets/images/sliderImgs/slider1.jpg";
+import SliderImageTwo from "../assets/images/sliderImgs/slider2.jpg";
+import SliderImageThree from "../assets/images/sliderImgs/slider3.jpg";
+import SliderImageFour from "../assets/images/sliderImgs/slider4.jpg";
+import SliderImageFive from "../assets/images/sliderImgs/slider5.jpg";
+
+import valueImgTablet1x from "../assets/images/valuesImage/maskGroup-tablet.jpg";
+import valueImgTablet2x from "../assets/images/valuesImage/maskGroup-tablet@2x.jpg";
+import valueImgTabletTwo1x from "../assets/images/valuesImage/maskGroupTwo-tablet.jpg";
+import valueImgTabletTwo2x from "../assets/images/valuesImage/maskGroupTwo-tablet@2x.jpg";
+import valueImgDesktop1x from "../assets/images/valuesImage/maskGroup-desktop.jpg";
+import valueImgDesktop2x from "../assets/images/valuesImage/maskGroup-desktop@2x.jpg";
+import valueImgDesktopTwo1x from "../assets/images/valuesImage/maskGroupTwo-desktop.jpg";
+import valueImgDesktopTwo2x from "../assets/images/valuesImage/maskGroupTwo-desktop@2x.jpg";
 
 export const POINTS_LIST = [
-  { id: 1, value: 'Main' },
-  { id: 2, value: 'About' },
-  { id: 3, value: 'Service' },
-  { id: 4, value: 'Cases' },
-  { id: 5, value: 'FAQ' },
-  { id: 6, value: 'Customers' },
-  { id: 7, value: 'Contact Us' },
+  { id: 1, value: "Main" },
+  { id: 2, value: "About" },
+  { id: 3, value: "Service" },
+  { id: 4, value: "Cases" },
+  { id: 5, value: "FAQ" },
+  { id: 6, value: "Customers" },
+  { id: 7, value: "Contact Us" },
 ];
 
 export const VALUES = [
   {
     id: 1,
-    icon: 'icon-maximize-circle',
-    title: 'Openness',
-    text: 'to the world, people, new ideas and projects',
+    icon: "icon-maximize-circle",
+    title: "Openness",
+    text: "to the world, people, new ideas and projects",
   },
   {
     id: 2,
-    icon: 'icon-global-edit',
-    title: 'Responsibility',
-    text: 'we are aware that the results of our work have an impact on our lives and the lives of future generations',
+    icon: "icon-global-edit",
+    title: "Responsibility",
+    text: "we are aware that the results of our work have an impact on our lives and the lives of future generations",
   },
   {
     id: 3,
-    icon: 'icon-cpu-charge',
-    title: 'Innovation',
-    text: 'we use the latest technology to implement non-standard solutions',
+    type: "img",
+    imageTabl1x: valueImgTablet1x,
+    imageTabl2x: valueImgTablet2x,
+    imageDesk1x: valueImgDesktop1x,
+    imageDesk2x: valueImgDesktop2x,
   },
   {
     id: 4,
-    icon: 'icon-ranking',
-    title: 'Quality',
-    text: 'we do not strive to be the first among others, but we want to be the best in our business',
+    type: "img",
+    imageTabl1x: valueImgTabletTwo1x,
+    imageTabl2x: valueImgTabletTwo2x,
+    imageDesk1x: valueImgDesktopTwo1x,
+    imageDesk2x: valueImgDesktopTwo2x,
+  },
+  {
+    id: 5,
+    icon: "icon-cpu-charge",
+    title: "Innovation",
+    text: "we use the latest technology to implement non-standard solutions",
+  },
+  {
+    id: 6,
+    icon: "icon-ranking",
+    title: "Quality",
+    text: "we do not strive to be the first among others, but we want to be the best in our business",
   },
 ];
 
@@ -45,37 +70,37 @@ export const SLIDER_LIST = [
   {
     id: 0,
     image: SliderImageOne,
-    title: 'Lviv Region, Radekhiv town Private Enterprise “ZAKHIDNYI BUH”',
-    text: 'Wind Power for auto field irrigation',
-    period: 'July 2023',
+    title: "Lviv Region, Radekhiv town Private Enterprise “ZAKHIDNYI BUH”",
+    text: "Wind Power for auto field irrigation",
+    period: "July 2023",
   },
   {
     id: 1,
     image: SliderImageTwo,
-    title: 'Zhytomyr city Private Enterprise “Bosch”',
-    text: 'Solar Panels for industrial use',
-    period: 'November 2023',
+    title: "Zhytomyr city Private Enterprise “Bosch”",
+    text: "Solar Panels for industrial use",
+    period: "November 2023",
   },
   {
     id: 2,
     image: SliderImageThree,
-    title: 'Rivne city Private Enterprise “Biotech”',
-    text: 'Thermal modules',
-    period: 'October 2023',
+    title: "Rivne city Private Enterprise “Biotech”",
+    text: "Thermal modules",
+    period: "October 2023",
   },
   {
     id: 3,
     image: SliderImageFour,
-    title: 'Kherson city Private Enterprise “HealthyFarm”',
-    text: 'Wind power',
-    period: 'September 2021',
+    title: "Kherson city Private Enterprise “HealthyFarm”",
+    text: "Wind power",
+    period: "September 2021",
   },
   {
     id: 4,
     image: SliderImageFive,
-    title: 'Zaporizhia city Private Enterprise “Biotech”',
-    text: 'Mini nuclear stations',
-    period: 'May 2021',
+    title: "Zaporizhia city Private Enterprise “Biotech”",
+    text: "Mini nuclear stations",
+    period: "May 2021",
   },
 ];
 

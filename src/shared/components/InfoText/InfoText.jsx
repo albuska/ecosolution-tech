@@ -1,11 +1,10 @@
-import PropTypes from 'prop-types';
-import { Text } from './InfoText.styled';
+import PropTypes from "prop-types";
+import { Text } from "./InfoText.styled";
 
-export const InfoText = ({text, marginTop}) => {
-  return <Text style={{marginTop}}>{text}</Text>;
+export const InfoText = ({ text }) => {
+  return <Text>{text}</Text>;
 };
 
 InfoText.propTypes = {
   text: PropTypes.string.isRequired,
-  marginTop: PropTypes.number.isRequired,
 };

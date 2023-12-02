@@ -1,16 +1,66 @@
-import { styled } from 'styled-components';
+import { styled } from "styled-components";
+import {
+  selectDesktop,
+  selectTablet,
+} from "../../../utils/selectMediaRequests";
 
-export const ValuesList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  margin-top: 36px;
+export const ImgValue = styled.img`
+  @media ${selectTablet} {
+    max-width: 342px;
+    height: 197px;
+  }
+
+  @media ${selectDesktop} {
+    max-width: 596px;
+  }
 `;
 
 export const ValueItem = styled.li`
   padding: 12px;
-  width: 148px;
   background-color: #eaedf1;
+
+  @media screen and (max-width: 767px) {
+    min-width: 148px;
+  }
+
+  @media ${selectDesktop} {
+    min-width: 274px;
+    height: 339px;
+    padding: 48px 26px;
+  }
+`;
+
+export const ValuesList = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+  margin-top: 36px;
+
+  @media ${selectTablet} {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 0;
+  }
+
+  @media ${selectDesktop} {
+    gap: 48px;
+  }
+
+  & :has(img) {
+    display: none;
+    padding: 0;
+    grid-column: span 2;
+    background-color: transparent;
+
+    @media ${selectTablet} {
+      display: block;
+    }
+  }
+`;
+
+export const ListContainer = styled.div`
+  @media ${selectTablet} {
+    margin-top: 100px;
+  }
 `;
 
 export const TitleBox = styled.div`
@@ -18,6 +68,27 @@ export const TitleBox = styled.div`
   align-items: center;
   gap: 8px;
   margin-bottom: 33px;
+
+  @media ${selectDesktop} {
+    margin-bottom: 94px;
+  }
+`;
+
+export const ValuesTextOverlay = styled.div`
+  @media ${selectTablet} {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
+
+export const SecondTitleValuesOverlay = styled.div`
+  @media ${selectTablet} {
+    width: 240px;
+  }
+
+  @media ${selectDesktop} {
+    width: 365px;
+  }
 `;
 
 export const ValueTitle = styled.h3`
@@ -26,6 +97,10 @@ export const ValueTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes.md};
   line-height: 1.5;
   text-transform: uppercase;
+
+  @media ${selectDesktop} {
+    font-size: ${({ theme }) => theme.fontSizes.xxxl};
+  }
 `;
 
 export const ValueText = styled.p`
@@ -33,4 +108,28 @@ export const ValueText = styled.p`
   color: ${({ theme }) => theme.colors.mainTextColor};
   text-align: justify;
   letter-spacing: -0.56px;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+
+  @media ${selectDesktop} {
+    margin-top: 24px;
+    font-size: ${({ theme }) => theme.fontSizes.md};
+  }
+`;
+
+export const TextOverlay = styled.div`
+  @media screen and (max-width: 767px) {
+    margin-top: 24px;
+  }
+
+  @media ${selectTablet} {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    width: 352px;
+  }
+
+  @media ${selectDesktop} {
+    width: 539px;
+    gap: 91px;
+  }
 `;
