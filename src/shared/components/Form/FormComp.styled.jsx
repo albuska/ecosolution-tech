@@ -1,7 +1,10 @@
 import { styled } from "styled-components";
 import { Field, Form, ErrorMessage } from "formik";
 import { theme } from "../../../theme/theme";
-import { selectTablet } from "../../../utils/selectMediaRequests";
+import {
+  selectDesktop,
+  selectTablet,
+} from "../../../utils/selectMediaRequests";
 
 export const FormStyle = styled(Form)`
   margin-top: 36px;
@@ -12,6 +15,11 @@ export const FormStyle = styled(Form)`
 
   @media ${selectTablet} {
     width: 50%;
+    padding: 36px 24px;
+  }
+
+  @media ${selectDesktop} {
+    padding: 48px;
   }
 `;
 
@@ -38,6 +46,10 @@ export const Input = styled(Field)`
 
   &::placeholder {
     color: #bdbdbd;
+  }
+
+  @media ${selectDesktop} {
+    font-size: ${({ theme }) => theme.fontSizes.lg};
   }
 `;
 

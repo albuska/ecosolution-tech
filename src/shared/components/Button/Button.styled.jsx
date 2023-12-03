@@ -8,6 +8,11 @@ export const BtnStyled = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.mainTextColor}; 
+    color: ${({ theme }) => theme.colors.accentColor}; 
+  }
 `;
 
 export const ButtonText = styled.p`

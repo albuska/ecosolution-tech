@@ -1,13 +1,18 @@
+import { useRef } from "react";
 import { FormComp } from "../../../shared/components/Form/FormComp";
 import { Icon } from "../../../shared/components/Icon/Icon";
 import { Networks } from "../../../shared/components/Networks/Networks";
 import { SecondTitle } from "../../../shared/components/SecondTitle/SecondTitle";
 import { SectionStyled } from "../../GlobalStyle/GlobalStyle";
 import { Text, LinkPhone, ContactOverlay } from "./ContactSection.styled";
+import useIsDesktop from "../../../hooks/useIsDesktop/useIsDesktop";
 
 export const ContactSection = () => {
+  const isDesktop = useIsDesktop(); 
+  const contactSectionRef = useRef();
+
   return (
-    <SectionStyled>
+    <SectionStyled ref={contactSectionRef}>
       <SecondTitle text="Contact us" textAlign={"center"} />
       <ContactOverlay>
         <address>
@@ -56,7 +61,7 @@ export const ContactSection = () => {
               stroke={"#173D33"}
               fill="transparent"
             />
-            79005, Ukraine, Lvivstreet. <br /> Shota Rustaveli, 7
+            79005, Ukraine, Lvivstreet. {isDesktop ? null : <br/>}  Shota Rustaveli, 7
           </LinkPhone>
           <Text>Social Networks:</Text>
           <div style={{ marginTop: 20 }}>

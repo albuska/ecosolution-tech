@@ -57,6 +57,14 @@ export const IconBox = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  &:hover {
+    border: 1px solid ${({ theme }) => theme.colors.accentColor};  
+  }
+
+  &:hover svg > use {
+    stroke: ${({ theme }) => theme.colors.accentColor};  
+  }
 `;
 
 export const IconBoxSlider = styled.button`

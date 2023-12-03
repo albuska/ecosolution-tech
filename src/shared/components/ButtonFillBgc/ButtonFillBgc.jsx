@@ -6,7 +6,13 @@ export const ButtonFillBgc = ({ text }) => {
   return (
     <ButtonFill>
       {text}
-      <Icon iconName={"icon-ellipse"} width={14} height={14} fill={"#173D33"} />
+        <Icon
+          iconName={"icon-ellipse"}
+          width={14}
+          height={14}
+          fill={"#173D33"}
+        />
+
     </ButtonFill>
   );
 };

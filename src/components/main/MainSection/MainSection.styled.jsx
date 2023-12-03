@@ -6,6 +6,7 @@ export const MainSectionContainer = styled.main`
   padding-right: 20px;
   width: 100%;
   margin: 0 auto;
+  /* margin-top: 60px;  */
 
   @media ${selectTablet} {
     padding-left: 30px;
@@ -16,6 +17,6 @@ export const MainSectionContainer = styled.main`
     width: 1280px;
     padding-left: 100px;
     padding-right: 100px;
-    background-color: yellow;
+    /* background-color: yellow; */
   }
 `;

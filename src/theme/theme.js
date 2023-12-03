@@ -4,6 +4,7 @@ const fonts = {
   mediumFira: "FiraSans-Medium",
   regularOswald: "Oswald-Regular",
   boldOswald: "Oswald-SemiBold",
+  GothicA1Medium: "GothicA1-Medium",
 };
 
 const fontSizes = {
@@ -17,6 +18,7 @@ const fontSizes = {
   xl: "24px",
   xxl: "28px",
   xxxl: "32px",
+  xxxxl: "33px",
   big: "36px",
   huge: "48px",
   gigantic: "64px",

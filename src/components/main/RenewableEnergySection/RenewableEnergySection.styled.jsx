@@ -11,6 +11,10 @@ export const RenewableEnergyMainTitle = styled.h1`
   line-height: 1;
   text-transform: uppercase;
 
+  @media screen and (max-width: 767px) {
+    margin-top: 146px;
+  }
+
   @media ${selectTablet} {
     width: 290px;
     font-size: ${({ theme }) => theme.fontSizes.huge};
@@ -29,11 +33,13 @@ export const TitleOverlay = styled.div`
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+    margin-top: 164px;
     justify-content: space-between;
   }
 
   @media ${selectDesktop} {
     gap: 296px;
+    margin-top: 200px;
   }
 `;
 
@@ -63,11 +69,11 @@ export const MainOverlay = styled.div`
 `;
 
 export const SecondTextBox = styled.div`
-@media ${selectDesktop} {
-  display: flex;
-  gap: 250px;
-}
-`
+  @media ${selectDesktop} {
+    display: flex;
+    gap: 250px;
+  }
+`;
 
 export const MainImg = styled.div`
   margin: auto;

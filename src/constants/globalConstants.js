@@ -16,11 +16,9 @@ import valueImgDesktopTwo2x from "../assets/images/valuesImage/maskGroupTwo-desk
 export const POINTS_LIST = [
   { id: 1, value: "Main" },
   { id: 2, value: "About" },
-  { id: 3, value: "Service" },
-  { id: 4, value: "Cases" },
-  { id: 5, value: "FAQ" },
-  { id: 6, value: "Customers" },
-  { id: 7, value: "Contact Us" },
+  { id: 3, value: "Cases" },
+  { id: 4, value: "FAQ" },
+  { id: 5, value: "Contact Us" },
 ];
 
 export const VALUES = [

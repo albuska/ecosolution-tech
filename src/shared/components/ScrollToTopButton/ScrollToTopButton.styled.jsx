@@ -10,4 +10,13 @@ export const ContainerScroll = styled.div`
   align-items: center;
   justify-content: center;
   transform: rotate(90deg);
+  cursor: pointer;
+
+  &:hover {
+    background: ${props => props.theme.colors.mainTextColor};
+  }
+
+  &:hover svg > use {
+    stroke: ${props => props.theme.colors.accentColor};
+  }
 `;

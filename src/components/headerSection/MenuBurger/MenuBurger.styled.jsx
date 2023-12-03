@@ -1,5 +1,8 @@
-import { styled } from 'styled-components';
-import { selectDesktop, selectTablet } from '../../../utils/selectMediaRequests';
+import { styled } from "styled-components";
+import {
+  selectDesktop,
+  selectTablet,
+} from "../../../utils/selectMediaRequests";
 
 export const Backdrop = styled.div`
   width: 100%;
@@ -35,13 +38,13 @@ export const MenuBurgerContainer = styled.div`
   justify-content: space-between;
 
   @media ${selectTablet} {
-  right: 30px;
-  top: 42px;
+    right: 30px;
+    top: 42px;
   }
 
   @media ${selectDesktop} {
-  right: 100px;
-  top: 30px;
+    right: 100px;
+    top: 30px;
   }
 `;
 
@@ -50,6 +53,14 @@ export const IconCloseContainer = styled.div`
   align-items: center;
   gap: 4px;
   cursor: pointer;
+
+  &:hover svg > use {
+    fill: ${({ theme }) => theme.colors.accentColor};
+  }
+
+  &:hover p {
+    color: ${({ theme }) => theme.colors.accentColor};
+  }
 `;
 
 export const IconText = styled.p`
@@ -73,6 +84,7 @@ export const ItemPoints = styled.li`
   gap: 8px;
   align-items: baseline;
   margin-top: 8px;
+  cursor: pointer;
 
   &:hover svg > use,
   &:focus svg > use {
@@ -90,4 +102,3 @@ export const ItemText = styled.p`
     color: ${({ theme }) => theme.colors.accentColor};
   }
 `;
-

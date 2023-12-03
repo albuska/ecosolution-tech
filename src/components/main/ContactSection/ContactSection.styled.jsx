@@ -10,8 +10,10 @@ export const ContactOverlay = styled.div`
 
   @media ${selectDesktop} {
     padding-bottom: 120px;
+    padding-top: 120px;
   }
 `;
+
 
 export const Text = styled.p`
   color: ${({ theme }) => theme.colors.mainTextColor};
@@ -29,6 +31,10 @@ export const LinkPhone = styled.a`
   letter-spacing: -0.8px;
   align-items: center;
   gap: 8px;
+
+  @media ${selectDesktop} {
+  font-size: ${({ theme }) => theme.fontSizes.xl};  
+  }
 `;
 
 export const EmailBox = styled.div`

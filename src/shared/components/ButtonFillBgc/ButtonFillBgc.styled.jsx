@@ -11,4 +11,13 @@ export const ButtonFill = styled.button`
   font-size: ${({ theme }) => theme.fontSizes.md};
   border-radius: 500px;
   margin: 0 auto;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.mainTextColor};
+    color: ${({ theme }) => theme.colors.accentColor};
+
+    &:hover svg > use {
+      fill: ${({ theme }) => theme.colors.accentColor};
+    }
+  }
 `;

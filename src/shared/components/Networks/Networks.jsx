@@ -12,7 +12,7 @@ export const Networks = ({
 }) => {
   return (
     <NetworksList style={{ gap, justifyContent }}>
-      <li>
+      <li style={{cursor: "pointer"}}>
         <Icon
           iconName={"icon-facebook"}
           fill={fillFace ? fillFace : "#FFFFFF"}
@@ -21,7 +21,7 @@ export const Networks = ({
           height={24}
         />
       </li>
-      <li>
+      <li style={{cursor: "pointer"}}> 
         <Icon
           iconName={"icon-instagram"}
           fill={fillIns ? fillIns : "transparent"}

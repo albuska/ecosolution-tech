@@ -1,17 +1,26 @@
 import { styled } from "styled-components";
-import { selectDesktop, selectTablet } from "../../../utils/selectMediaRequests";
+import {
+  selectDesktop,
+  selectTablet,
+} from "../../../utils/selectMediaRequests";
 
 export const HeaderContainer = styled.header`
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  /* position: fixed; */
+  /* top: 0;
+  left: 0;  */
   width: 100%;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+  background-color: #f3f5fa;
+  /* z-index: 1000; */
 
   @media ${selectTablet} {
+    width: 768px;
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -32,4 +41,8 @@ export const MenuContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  &:hover {
+  background-color:  ${({ theme }) => theme.colors.accentColor};
+  }
 `;
