@@ -27,8 +27,8 @@ import { VerticalLine } from "../../../shared/components/VerticalLine/VerticalLi
 import { SectionStyled } from "../../GlobalStyle/GlobalStyle";
 
 export const SuccessfulCasesSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const isTablet = useIsTablet();
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const addLeadingZero = (value) => {
     return String(value).padStart(2, "0");
@@ -82,10 +82,13 @@ export const SuccessfulCasesSection = () => {
         </SuccessfulCasesSecondBox>
       </SuccessfulHeaderOverlay>
       <SliderList>
-        {SLIDER_LIST.map((item) => (
+        {SLIDER_LIST.map((item, index) => (
           <SliderContainer
             key={item.id}
-            $previous={item.id === currentIndex - 1}
+            $previous={
+              (index === 0 && currentIndex === SLIDER_LIST.length - 1) ||
+              (index > 0 && item.id === currentIndex - 1)
+            }
             $active={item.id === currentIndex}
           >
             <ImgSlider src={item.image} alt={item.title} />

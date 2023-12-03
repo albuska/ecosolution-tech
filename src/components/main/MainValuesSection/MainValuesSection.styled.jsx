@@ -4,32 +4,6 @@ import {
   selectTablet,
 } from "../../../utils/selectMediaRequests";
 
-export const ImgValue = styled.img`
-  @media ${selectTablet} {
-    max-width: 342px;
-    height: 197px;
-  }
-
-  @media ${selectDesktop} {
-    max-width: 596px;
-  }
-`;
-
-export const ValueItem = styled.li`
-  padding: 12px;
-  background-color: #eaedf1;
-
-  @media screen and (max-width: 767px) {
-    min-width: 148px;
-  }
-
-  @media ${selectDesktop} {
-    min-width: 274px;
-    height: 339px;
-    padding: 48px 26px;
-  }
-`;
-
 export const ValuesList = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -54,6 +28,20 @@ export const ValuesList = styled.ul`
     @media ${selectTablet} {
       display: block;
     }
+  }
+`;
+
+export const Img = styled.img`
+    width: 100%;
+    height: auto; 
+`;
+
+export const ValueItem = styled.li`
+  padding: 12px;
+  background-color: #eaedf1;
+
+  @media ${selectDesktop} {
+    /* padding: 48px 24px; */
   }
 `;
 
@@ -99,7 +87,7 @@ export const ValueTitle = styled.h3`
   text-transform: uppercase;
 
   @media ${selectDesktop} {
-    font-size: ${({ theme }) => theme.fontSizes.xxxl};
+    font-size: ${({ theme }) => theme.fontSizes.xxl};
   }
 `;
 

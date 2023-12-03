@@ -12,8 +12,8 @@ import {
   TextOverlay,
   ValuesTextOverlay,
   SecondTitleValuesOverlay,
-  ImgValue,
   ListContainer,
+  Img,
 } from "./MainValuesSection.styled";
 import useIsTablet from "../../../hooks/useIsTablet/useIsTablet";
 import { VerticalLine } from "../../../shared/components/VerticalLine/VerticalLine";
@@ -54,7 +54,7 @@ export const MainValuesSection = () => {
                     srcSet={(item.imageTabl1x, item.imageTabl2x)}
                     media="(min-width: 768px) and (max-width: 1279px)"
                   />
-                  <ImgValue
+                  <Img
                     src={item.imageDesk1x}
                     alt="ValueImg"
                     loading="lazy"

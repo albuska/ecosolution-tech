@@ -10,7 +10,7 @@ import {
   MobileOverlayText,
   MainQuestionsBox,
   QuestionsTitleOverlay,
-  ButtonBox
+  ButtonBox,
 } from "./QuestionsSection.styled";
 import { QUESTIONS } from "../../../constants/globalConstants";
 import { Icon } from "../../../shared/components/Icon/Icon";
@@ -20,17 +20,22 @@ import { SectionStyled } from "../../GlobalStyle/GlobalStyle";
 import useIsTablet from "../../../hooks/useIsTablet/useIsTablet";
 
 export const QuestionsSection = () => {
-  const [openQuestionId, setOpenQuestionId] = useState(null);
   const isTablet = useIsTablet();
+  const [openQuestionIds, setOpenQuestionIds] = useState([]);
 
   const handleOpenQuestion = (questionId) => {
-    setOpenQuestionId((prevId) => (prevId === questionId ? null : questionId));
+    setOpenQuestionIds((prevIds) => {
+      if (prevIds.includes(questionId)) {
+        return prevIds.filter((id) => id !== questionId);
+      } else {
+        return [...prevIds, questionId];
+      }
+    });
   };
-
   return (
     <SectionStyled>
       <MainQuestionsBox>
-      <QuestionsTitleOverlay>
+        <QuestionsTitleOverlay>
           <SecondTitle text="Frequently Asked Questions" />
           {isTablet && (
             <ButtonBox>
@@ -40,14 +45,14 @@ export const QuestionsSection = () => {
               </ButtonOverlay>
             </ButtonBox>
           )}
-      </QuestionsTitleOverlay>
+        </QuestionsTitleOverlay>
         <QuestionsList>
           {QUESTIONS.map((item) => (
             <li key={item.id}>
               <Line />
               <QuestionBox>
                 <button onClick={() => handleOpenQuestion(item.id)}>
-                  {openQuestionId === item.id ? (
+                  {openQuestionIds.includes(item.id) ? (
                     <Icon
                       iconName={"icon-minus"}
                       width={16}
@@ -67,9 +72,9 @@ export const QuestionsSection = () => {
                 </button>
                 <QuestionText>{item.question}</QuestionText>
               </QuestionBox>
-              {openQuestionId === item.id && (
+              {openQuestionIds.includes(item.id) && (
                 <AnswerText>{item.answer}</AnswerText>
-              )}
+               )} 
             </li>
           ))}
         </QuestionsList>

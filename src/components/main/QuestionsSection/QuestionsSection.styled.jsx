@@ -19,6 +19,10 @@ export const QuestionsList = styled.ul`
 export const QuestionBox = styled.div`
   display: flex;
   gap: 8px;
+
+  @media ${selectDesktop} {
+  gap: 24px;  
+  }
 `;
 
 export const QuestionText = styled.p`
@@ -27,6 +31,10 @@ export const QuestionText = styled.p`
   text-align: justify;
   font-size: ${({ theme }) => theme.fontSizes.ml};
   letter-spacing: -0.72px;
+
+  @media ${selectDesktop} {
+    font-size: ${({ theme }) => theme.fontSizes.xl};  
+  }
 `;
 
 export const AnswerText = styled.p`
@@ -36,6 +44,12 @@ export const AnswerText = styled.p`
   letter-spacing: -0.56px;
   width: 296px;
   margin-left: auto;
+
+  @media ${selectDesktop} {
+    font-size: ${({ theme }) => theme.fontSizes.md};  
+    padding-left: 38px;
+    width: 100%;
+  }
 `;
 
 export const Text = styled.p`
@@ -44,6 +58,10 @@ export const Text = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.ml};
   letter-spacing: -0.72px;
   margin-top: 36px;
+
+  @media ${selectDesktop} {
+    font-size: ${({ theme }) => theme.fontSizes.xl}; 
+  }
 `;
 
 export const ButtonOverlay = styled.div`
@@ -67,6 +85,7 @@ export const MainQuestionsBox = styled.div`
 
   @media ${selectDesktop} {
     justify-content: space-between;
+    gap: 0;
   }
 `;
 
@@ -75,6 +94,10 @@ export const QuestionsTitleOverlay = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+    @media ${selectDesktop} {
+    padding-left: 185px;
   }
 `;
 
@@ -85,3 +108,4 @@ export const ButtonBox = styled.div`
     gap: 12px;
   }
 `
+

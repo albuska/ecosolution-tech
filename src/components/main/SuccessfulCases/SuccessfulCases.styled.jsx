@@ -24,6 +24,10 @@ export const SuccessfulHeaderOverlay = styled.div`
     align-items: center;
     justify-content: space-between;
   }
+
+  @media ${selectDesktop} {
+    margin-bottom: 120px;
+  }
 `;
 
 export const DateText = styled.p`
@@ -52,6 +56,7 @@ export const IconBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `;
 
 export const IconBoxSlider = styled.button`
@@ -82,9 +87,14 @@ export const SliderContainer = styled.li`
   transition: opacity 0.5s ease;
 
   @media ${selectTablet} {
-    display: ${(props) =>
-      props.$active || props.$previous ? "block" : "none"};
+    width: 50%;
+  display: ${(props) => (props.$previous || props.$active ? 'block' : 'none')};
+  transition: opacity 0.5s ease;
   }
+
+  /* @media ${selectDesktop} {
+    width: 596px;
+  } */
 `;
 
 export const ImgSlider = styled.img`
@@ -92,7 +102,12 @@ export const ImgSlider = styled.img`
   margin: auto;
 
   @media ${selectTablet} {
-    width: 342px;
+    /* width: 342px; */
+  }
+
+  @media ${selectDesktop} {
+    /* width: 100%; */
+    /* width: 596px; */
   }
 `;
 

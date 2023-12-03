@@ -16,5 +16,6 @@ export const MainSectionContainer = styled.main`
     width: 1280px;
     padding-left: 100px;
     padding-right: 100px;
+    background-color: yellow;
   }
 `;
