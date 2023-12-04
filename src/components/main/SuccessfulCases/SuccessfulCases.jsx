@@ -28,24 +28,27 @@ import { SectionStyled } from "../../GlobalStyle/GlobalStyle";
 
 export const SuccessfulCasesSection = () => {
   const isTablet = useIsTablet();
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const addLeadingZero = (value) => {
-    return String(value).padStart(2, "0");
-  };
+  const [currentIndex, setCurrentIndex] = useState(isTablet ? 1 : 0);
+  const [previousIndex, setPreviousIndex] = useState(SLIDER_LIST.length - 1);
 
   const nextSlide = () => {
+    setPreviousIndex(currentIndex);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % SLIDER_LIST.length);
   };
 
   const prevSlide = () => {
+    setPreviousIndex(currentIndex);
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? SLIDER_LIST.length - 1 : prevIndex - 1
     );
   };
 
+  const addLeadingZero = (value) => {
+    return String(value).padStart(2, "0");
+  };
+
   return (
-    <SectionStyled>
+    <SectionStyled id="casesId">
       <SuccessfulHeaderOverlay>
         <SuccessfulTitleOverlay>
           <SuccessfulTitleBox>
@@ -81,20 +84,17 @@ export const SuccessfulCasesSection = () => {
           </IconsBox>
         </SuccessfulCasesSecondBox>
       </SuccessfulHeaderOverlay>
-      <SliderList>
-        {SLIDER_LIST.map((item, index) => (
+       <SliderList>
+        {[previousIndex, currentIndex].map((index) => (
           <SliderContainer
-            key={item.id}
-            $previous={
-              (index === 0 && currentIndex === SLIDER_LIST.length - 1) ||
-              (index > 0 && item.id === currentIndex - 1)
-            }
-            $active={item.id === currentIndex}
+            key={SLIDER_LIST[index].id}
+            $active={index === currentIndex}
+            $previous={index === previousIndex}
           >
-            <ImgSlider src={item.image} alt={item.title} />
+            <ImgSlider src={SLIDER_LIST[index].image} alt={SLIDER_LIST[index].title} />
             <InfoBoxesOverlay>
               <InfoBoxUp>
-                <SliderTitle>{item.title}</SliderTitle>
+                <SliderTitle>{SLIDER_LIST[index].title}</SliderTitle>
                 <IconBoxSlider>
                   <Icon
                     iconName={"icon-arrow-up"}
@@ -107,8 +107,8 @@ export const SuccessfulCasesSection = () => {
               </InfoBoxUp>
               <Line />
               <InfoBoxDown>
-                <SliderText>{item.text}</SliderText>
-                <SliderText>{item.period}</SliderText>
+                <SliderText>{SLIDER_LIST[index].text}</SliderText>
+                <SliderText>{SLIDER_LIST[index].period}</SliderText>
               </InfoBoxDown>
             </InfoBoxesOverlay>
           </SliderContainer>

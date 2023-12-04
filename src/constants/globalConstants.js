@@ -14,11 +14,11 @@ import valueImgDesktopTwo1x from "../assets/images/valuesImage/maskGroupTwo-desk
 import valueImgDesktopTwo2x from "../assets/images/valuesImage/maskGroupTwo-desktop@2x.jpg";
 
 export const POINTS_LIST = [
-  { id: 1, value: "Main" },
-  { id: 2, value: "About" },
-  { id: 3, value: "Cases" },
-  { id: 4, value: "FAQ" },
-  { id: 5, value: "Contact Us" },
+  { id: 1, label: "mainId", value: "Main" },
+  { id: 2, label: "aboutId", value: "About" },
+  { id: 3, label: "casesId", value: "Cases" },
+  { id: 4, label: "FAQId", value: "FAQ" },
+  { id: 5, label: "contactUsId", value: "Contact Us" },
 ];
 
 export const VALUES = [

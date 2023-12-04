@@ -2,9 +2,10 @@ import PropTypes from "prop-types";
 import { Icon } from "../Icon/Icon";
 import { BtnStyled, ButtonText, IconBox } from "./Button.styled";
 
-export const Button = ({ text, type, width,  }) => {
+export const Button = ({ text, type, width, scrollToCases }) => {
+  
   return (
-    <BtnStyled style={{ width }} type={type}>
+    <BtnStyled onClick={scrollToCases} style={{ width }} type={type}>
       <ButtonText>{text}</ButtonText>
       <IconBox>
         <Icon
@@ -22,5 +23,6 @@ export const Button = ({ text, type, width,  }) => {
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  width: PropTypes.number
+  width: PropTypes.number,
+  scrollToCases: PropTypes.func
 };

@@ -25,7 +25,7 @@ export const MainValuesSection = () => {
   const isDesktop = useIsDesktop(); 
 
   return (
-    <SectionStyled>
+    <SectionStyled id="aboutId">
       <ValuesTextOverlay>
         <SecondTitleValuesOverlay>
           <SecondTitle text="Main values of our company" />

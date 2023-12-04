@@ -55,7 +55,7 @@ export const IconCloseContainer = styled.div`
   cursor: pointer;
 
   &:hover svg > use {
-    fill: ${({ theme }) => theme.colors.accentColor};
+    stroke:  ${({ theme }) => theme.colors.accentColor};
   }
 
   &:hover p {

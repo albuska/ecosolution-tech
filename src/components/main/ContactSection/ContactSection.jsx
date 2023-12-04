@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { FormComp } from "../../../shared/components/Form/FormComp";
 import { Icon } from "../../../shared/components/Icon/Icon";
 import { Networks } from "../../../shared/components/Networks/Networks";
@@ -9,10 +8,9 @@ import useIsDesktop from "../../../hooks/useIsDesktop/useIsDesktop";
 
 export const ContactSection = () => {
   const isDesktop = useIsDesktop(); 
-  const contactSectionRef = useRef();
 
   return (
-    <SectionStyled ref={contactSectionRef}>
+    <SectionStyled id="contactUsId">
       <SecondTitle text="Contact us" textAlign={"center"} />
       <ContactOverlay>
         <address>

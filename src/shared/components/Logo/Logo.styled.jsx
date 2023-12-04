@@ -14,6 +14,7 @@ export const LogoText = styled.p`
   letter-spacing: -1.32px;
 
   &:hover {
-  color: ${({ theme }) => theme.colors.accentColor};
+    color: ${({ theme }) => theme.colors.accentColor};
   }
 `;
+

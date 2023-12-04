@@ -5,9 +5,10 @@ import {
 } from "../../../utils/selectMediaRequests";
 
 export const HeaderContainer = styled.header`
-  /* position: fixed; */
-  /* top: 0;
-  left: 0;  */
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   display: flex;
   align-items: center;
@@ -16,8 +17,7 @@ export const HeaderContainer = styled.header`
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
-  background-color: #f3f5fa;
-  /* z-index: 1000; */
+
 
   @media ${selectTablet} {
     width: 768px;

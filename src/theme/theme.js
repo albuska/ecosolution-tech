@@ -4,7 +4,7 @@ const fonts = {
   mediumFira: "FiraSans-Medium",
   regularOswald: "Oswald-Regular",
   boldOswald: "Oswald-SemiBold",
-  GothicA1Medium: "GothicA1-Medium",
+  GothicA1Medium: "Fontspring-DEMO-allroundgothic-medium",
 };
 
 const fontSizes = {

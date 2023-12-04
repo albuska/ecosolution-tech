@@ -14,6 +14,20 @@ import { POINTS_LIST } from '../../../constants/globalConstants';
 import { Networks } from '../../../shared/components/Networks/Networks';
 
 export const MenuBurger = ({handleOpenMenu }) => {
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+  
+    if (section) {
+      const sectionTop = section.offsetTop;
+      handleOpenMenu(); 
+  
+      window.scrollTo({
+        top: sectionTop,
+        behavior: 'smooth',
+      });
+    }
+  };
  
   return (
 <Backdrop>
@@ -22,7 +36,7 @@ export const MenuBurger = ({handleOpenMenu }) => {
             <IconCloseContainer onClick={handleOpenMenu}>
               <Icon
                 iconName={'icon-iconamoon_close-light'}
-                fill={'#FFFFFF'}
+                stroke={'#FFFFFF'}
                 width={20}
                 height={20}
               />
@@ -31,7 +45,7 @@ export const MenuBurger = ({handleOpenMenu }) => {
             <LineBox></LineBox>
             <PointsList>
               {POINTS_LIST.map(item => (
-                <ItemPoints key={item.id}>
+                <ItemPoints key={item.id} onClick={() => scrollToSection(item.label)}>
                   <ItemText>{item.value}</ItemText>
                   <Icon
                     iconName={'icon-arrow-up'}

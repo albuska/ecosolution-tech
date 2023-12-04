@@ -1,17 +1,20 @@
 import PropTypes from "prop-types";
 import { Icon } from "../Icon/Icon";
-import { ButtonFill } from "./ButtonFillBgc.styled";
+import { ButtonFill, IconBtnBox } from "./ButtonFillBgc.styled";
 
-export const ButtonFillBgc = ({ text }) => {
+export const ButtonFillBgc = ({ text, scrollToContact }) => {
+ 
   return (
-    <ButtonFill>
+    <ButtonFill onClick={scrollToContact}>
       {text}
-        <Icon
-          iconName={"icon-ellipse"}
-          width={14}
-          height={14}
-          fill={"#173D33"}
-        />
+       <IconBtnBox   style={{ transform: 'rotate(130deg)'}}>
+          <Icon
+            iconName={"icon-arrow-up"}
+            width={8}
+            height={9}
+            fill={"#173D33"}
+          />
+       </IconBtnBox>
 
     </ButtonFill>
   );
@@ -19,4 +22,5 @@ export const ButtonFillBgc = ({ text }) => {
 
 ButtonFillBgc.propTypes = {
   text: PropTypes.string.isRequired,
+  scrollToContact: PropTypes.func
 };

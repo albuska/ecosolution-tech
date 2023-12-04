@@ -3,10 +3,23 @@ import { ContainerScroll } from './ScrollToTopButton.styled';
 import { Icon } from '../Icon/Icon';
 
 const ScrollToTopButton = () => {
+  
+  const scrollToMain = () => {
+    const mainSection = document.getElementById('mainId');
+  
+    if (mainSection) {
+      const mainSectionTop = mainSection.offsetTop;
+  
+      window.scrollTo({
+        top: mainSectionTop,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
-    <div>
-      {/* <ScrollToTop showUnder={160}> */}
-        <ContainerScroll>
+    <>
+        <ContainerScroll onClick={scrollToMain}>
           <Icon
             iconName={'icon-arrow-left'}
             width={16}
@@ -15,8 +28,7 @@ const ScrollToTopButton = () => {
             fill={"transparent"}
           />
         </ContainerScroll>
-      {/* </ScrollToTop> */}
-    </div>
+    </>
   );
 };
 

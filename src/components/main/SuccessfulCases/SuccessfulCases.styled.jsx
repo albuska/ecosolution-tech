@@ -75,6 +75,14 @@ export const IconBoxSlider = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:hover {
+  background-color: ${({ theme }) => theme.colors.mainTextColor};  
+  }
+
+  &:hover svg > use {
+  fill: ${({ theme }) => theme.colors.accentColor};  
+  }
 `;
 
 export const SliderList = styled.ul`
@@ -92,31 +100,16 @@ export const SliderList = styled.ul`
 
 export const SliderContainer = styled.li`
   display: ${(props) => (props.$active ? "block" : "none")};
-  transition: opacity 0.5s ease;
 
   @media ${selectTablet} {
-    width: 50%;
-  display: ${(props) => (props.$previous || props.$active ? 'block' : 'none')};
-  transition: opacity 0.5s ease;
+  width: 50%; 
+  display: ${(props) => (props.$active || props.$previous ? 'block' : 'none')};
   }
-
-  /* @media ${selectDesktop} {
-    width: 596px;
-  } */
 `;
 
 export const ImgSlider = styled.img`
   width: 100%;
   margin: auto;
-
-  @media ${selectTablet} {
-    /* width: 342px; */
-  }
-
-  @media ${selectDesktop} {
-    /* width: 100%; */
-    /* width: 596px; */
-  }
 `;
 
 export const SliderTitle = styled.h4`
@@ -159,7 +152,7 @@ export const SuccessfulTitleOverlay = styled.div`
     width: 378px;
     display: flex;
     align-items: center;
-    gap: 90px;
+    gap: 70px;
   }
 
   @media ${selectDesktop} {

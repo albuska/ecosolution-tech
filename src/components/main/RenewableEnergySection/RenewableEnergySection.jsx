@@ -24,8 +24,21 @@ import { SectionStyled } from "../../GlobalStyle/GlobalStyle";
 export const RenewableEnergySection = () => {
   const isTablet = useIsTablet();
 
+  const scrollToCases = () => {
+    const casesSection = document.getElementById('casesId');
+  
+    if (casesSection) {
+      const casesSectionTop = casesSection.offsetTop;
+  
+      window.scrollTo({
+        top: casesSectionTop,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
-    <SectionStyled>
+    <SectionStyled id="mainId">
       <TitleOverlay>
         <RenewableEnergyMainTitle>
           RENEWABLE ENERGY For any task
@@ -36,7 +49,7 @@ export const RenewableEnergySection = () => {
             sources, generating power generation using energy wind, sun, water,
             biomass"
           />
-            <Button text="Learn more" type="button" width={141} />
+            <Button text="Learn more" type="button" width={141} scrollToCases={scrollToCases}/>
         </MainOverlay>
       </TitleOverlay>
       <Line />
