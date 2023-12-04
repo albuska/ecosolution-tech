@@ -672,7 +672,7 @@ text-transform: uppercase;
 
   @media ${M} {
   width: 50%; 
-  display: ${e=>e.$active||e.$previous?"block":"none"};
+  display: ${e=>e.$previous||e.$active?"block":"none"};
   }
 `,Yx=C.img`
   width: 100%;
