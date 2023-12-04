@@ -103,7 +103,7 @@ export const SliderContainer = styled.li`
 
   @media ${selectTablet} {
   width: 50%; 
-  display: ${(props) => (props.$active || props.$previous ? 'block' : 'none')};
+  display: ${(props) => (props.$previous || props.$active ? 'block' : 'none')};
   }
 `;
 
