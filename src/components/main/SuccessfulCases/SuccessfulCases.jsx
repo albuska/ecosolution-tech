@@ -84,14 +84,18 @@ export const SuccessfulCasesSection = () => {
           </IconsBox>
         </SuccessfulCasesSecondBox>
       </SuccessfulHeaderOverlay>
-       <SliderList>
+      <SliderList>
         {[previousIndex, currentIndex].map((index) => (
           <SliderContainer
             key={SLIDER_LIST[index].id}
             $active={index === currentIndex}
             $previous={index === previousIndex}
+            onClick={index === currentIndex ? nextSlide : prevSlide}
           >
-            <ImgSlider src={SLIDER_LIST[index].image} alt={SLIDER_LIST[index].title} />
+            <ImgSlider
+              src={SLIDER_LIST[index].image}
+              alt={SLIDER_LIST[index].title}
+            />
             <InfoBoxesOverlay>
               <InfoBoxUp>
                 <SliderTitle>{SLIDER_LIST[index].title}</SliderTitle>
@@ -117,4 +121,3 @@ export const SuccessfulCasesSection = () => {
     </SectionStyled>
   );
 };
-
